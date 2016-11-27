@@ -12,6 +12,9 @@ export const appRoutes: Routes = [
     {
         path: 'about', component: AboutComponent
     },
+    {
+        path: 'about/:id', component: AboutComponent
+    },
     // 404
     {
         path: '**', component: HomeComponent

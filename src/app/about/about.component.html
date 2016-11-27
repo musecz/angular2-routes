@@ -1,3 +1,10 @@
 <p>
-  about works!
+ This is your About Page
 </p>
+<p *ngIf="param">
+    this is your parameter: <span style="color:red">{{param}}</span>
+</p>
+<p *ngIf="param_async">
+    this is your parameter with obs: <span style="color:red">{{param_async}}</span>
+</p>
+
