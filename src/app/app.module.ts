@@ -7,11 +7,16 @@ import { AppComponent } from './app.component';
 import { appRoutes } from './app.route';
 import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
+import { Child1Component } from './child1/child1.component';
+import { Child2Component } from './child2/child2.component';
+
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    AboutComponent
+    AboutComponent,
+    Child1Component,
+    Child2Component
   ],
   imports: [
     BrowserModule,
