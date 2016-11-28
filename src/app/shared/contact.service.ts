@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, Inject } from '@angular/core';
 import {Observable} from "rxjs";
 
 export interface Contact {
@@ -22,8 +22,9 @@ let contacts = [
 
 @Injectable()
 export class ContactService {
-
+  constructor(@Inject('apiUrl') private _apiUrl) {}
   getContacts(): Observable<Contact>{
+      console.log(this._apiUrl);
     return Observable.create(observer => {
       setTimeout(()=>{
         observer.next(contacts);

@@ -13,6 +13,9 @@ import {ConsoleLogService} from '../shared/console-log.service';
         ContactService,
         ConsoleLogService,
         {
+            provide: 'apiUrl', useValue: 'http://api.com'
+        },
+        {
             provide: LogDebuggerService,
             useFactory: (consoleLog)=> {
                 return new LogDebuggerService(consoleLog, false);
