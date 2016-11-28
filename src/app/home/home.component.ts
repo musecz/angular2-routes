@@ -1,19 +1,23 @@
 import {Component, OnInit, OnDestroy} from '@angular/core';
 import {ContactService} from '../shared/contact.service';
 import {Contact} from '../shared/contact.service';
-import { Subscription } from 'rxjs/Subscription';
-import {  LogDebuggerService } from '../shared/log-debugger.service';
+import {Subscription} from 'rxjs/Subscription';
+import {LogDebuggerService} from '../shared/log-debugger.service';
+import {ConsoleLogService} from '../shared/console-log.service';
+
 @Component({
     selector: 'app-home',
     templateUrl: './home.component.html',
     styleUrls: ['./home.component.css'],
     providers: [
         ContactService,
+        ConsoleLogService,
         {
             provide: LogDebuggerService,
-            useFactory: ()=> {
-                return new LogDebuggerService(false);
-            }
+            useFactory: (consoleLog)=> {
+                return new LogDebuggerService(consoleLog, false);
+            },
+            deps: [ConsoleLogService]
         }
     ]
 })
